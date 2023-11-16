@@ -126,7 +126,7 @@ func (r NameResource) Read(ctx context.Context, req resource.ReadRequest, resp *
 // Update resource
 func (r NameResource) Update(ctx context.Context, req resource.UpdateRequest, resp *resource.UpdateResponse) {
 	var resourceData NameResourceData
-	diags := req.Config.Get(ctx, &resourceData)
+	diags := req.Plan.Get(ctx, &resourceData)
 	resp.Diagnostics.Append(diags...)
 	if resp.Diagnostics.HasError() {
 		return
