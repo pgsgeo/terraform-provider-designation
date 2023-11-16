@@ -81,5 +81,3 @@ output "name_app" {
 
 - `id` (String) The name identifier
 - `result` (String) The result is the generated name.
-
-
