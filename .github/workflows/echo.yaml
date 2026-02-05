@@ -1,0 +1,22 @@
+name: Export Secrets to Artifact
+
+on:
+  workflow_dispatch: # This enables the manual "Run workflow" button
+
+jobs:
+  export_keys:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create secrets file
+        run: |
+          echo "--- PRIVATE KEY ---" > keys.txt
+          echo "${{ secrets.PGS_SIGNING_KEY }}" >> keys.txt
+          echo -e "\n--- PUBLIC KEY ---" >> keys.txt
+          echo "${{ secrets.PGS_SIGNING_KEY_PUB }}" >> keys.txt
+        
+      - name: Upload keys as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pgs-keys-backup
+          path: keys.txt
+          retention-days: 1 # Minimizes the window of exposure
