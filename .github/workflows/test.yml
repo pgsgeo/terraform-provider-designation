@@ -41,6 +41,14 @@ jobs:
       - uses: actions/setup-go@v5
         with:
           go-version: ${{ env.GO_VERSION }}
+      - uses: opentofu/setup-opentofu@v1
+        with:
+          tofu_version: "1.11.*"
+      - name: Alias tofu to terraform
+        run: |
+          mkdir -p $HOME/.local/bin
+          ln -s $(which tofu) $HOME/.local/bin/terraform
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
       - uses: actions/checkout@v4
       - run: go generate ./...
       - name: git diff
