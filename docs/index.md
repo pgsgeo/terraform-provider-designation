@@ -15,7 +15,7 @@ The Designation provider allows the generation of names following a configured c
 terraform {
   required_providers {
     designation = {
-      source = "datadrivers/designation"
+      source = "pgsgeo/designation"
     }
   }
 }

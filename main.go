@@ -36,7 +36,7 @@ func main() {
 
 	opts := providerserver.ServeOpts{
 		// TODO: Update this string with the published name of your provider.
-		Address: "search.opentofu.org/datadrivers/designation",
+		Address: "search.opentofu.org/pgsgeo/designation",
 		Debug:   debug,
 	}
 
