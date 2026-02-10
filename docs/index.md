@@ -12,6 +12,14 @@ The Designation provider allows the generation of names following a configured c
 ## Example Usage
 
 ```terraform
+terraform {
+  required_providers {
+    designation = {
+      source = "pgsgeo/designation"
+    }
+  }
+}
+
 provider "designation" {}
 ```
 

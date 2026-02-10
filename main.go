@@ -17,7 +17,7 @@ import (
 
 // Run the docs generation tool, check its repository for more information on how it works and how docs
 // can be customized.
-//go:generate go run github.com/hashicorp/terraform-plugin-docs/cmd/tfplugindocs
+//go:generate ./scripts/generate-docs.sh
 
 var (
 	// these will be set by the goreleaser configuration
@@ -36,7 +36,7 @@ func main() {
 
 	opts := providerserver.ServeOpts{
 		// TODO: Update this string with the published name of your provider.
-		Address: "registry.terraform.io/datadrivers/designation",
+		Address: "search.opentofu.org/pgsgeo/designation",
 		Debug:   debug,
 	}
 
