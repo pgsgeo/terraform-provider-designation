@@ -36,7 +36,7 @@ func main() {
 
 	opts := providerserver.ServeOpts{
 		// TODO: Update this string with the published name of your provider.
-		Address: "search.opentofu.org/pgsgeo/designation",
+		Address: "registry.terraform.io/pgsgeo/designation",
 		Debug:   debug,
 	}
 
