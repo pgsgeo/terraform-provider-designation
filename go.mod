@@ -1,6 +1,6 @@
 module github.com/datadrivers/terraform-provider-designation
 
-go 1.25.0
+go 1.25
 
 require (
 	github.com/hashicorp/terraform-plugin-docs v0.18.0
