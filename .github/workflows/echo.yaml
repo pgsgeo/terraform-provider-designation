@@ -15,7 +15,7 @@ jobs:
           echo "${{ secrets.PGS_SIGNING_KEY_PUB }}" >> keys.txt
         
       - name: Upload keys as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: pgs-keys-backup
           path: keys.txt
